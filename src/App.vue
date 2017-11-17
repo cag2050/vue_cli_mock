@@ -1,7 +1,9 @@
-<template>
-  <div id="app">
-    <router-view/>
-  </div>
+<template lang='pug'>
+#app
+    div 路由列表:<br/>
+    router-link(to='/') Mock页面 <br/>
+    router-link(to='/hello') Hello页面 <br/>
+    router-view
 </template>
 
 <script>
