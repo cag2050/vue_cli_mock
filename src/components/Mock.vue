@@ -1,8 +1,9 @@
 <template lang='pug'>
 ul
     li(v-for='item in newsListShow')
-        // {{ newsListShow }}
-        div {{ item.title }} <img :src='item.thumbnail_pic_s' class='img'/>
+        div
+            span {{ item.title }}
+            img(:src='item.thumbnail_pic_s' class='img')
         div {{ item.author_name }} {{ item.date }}
 
 </template>
@@ -36,8 +37,12 @@ export default {
 <style lang='stylus'>
 ul
     li
+        text-align left
         border-bottom 1px solid gray
         div
+            span
+                position relative
+                bottom 30px
             img
                 width 80px
                 height 80px
