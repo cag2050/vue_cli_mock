@@ -5,7 +5,7 @@ const Random = Mock.Random
 const produceData = function (opt) {
     console.log('opt', opt)
     let articles = []
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 6; i++) {
         let newArticleObject = {
             title: Random.csentence(5, 30), // Random.csentence( min, max )
             thumbnail_pic_s: Random.dataImage('300x250', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
