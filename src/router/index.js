@@ -7,9 +7,14 @@ Vue.use(Router)
 export default new Router({
     routes: [
         {
-            path: '/',
+            path: '/hello',
             name: 'HelloWorld',
             component: HelloWorld
+        },
+        {
+            path: '/',
+            name: 'Mock',
+            component: r => require.ensure([], () => r(require('../components/Mock')))
         }
     ]
 })
