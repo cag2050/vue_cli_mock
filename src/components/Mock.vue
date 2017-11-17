@@ -1,5 +1,10 @@
-<template>
-<div>mock</div>
+<template lang='pug'>
+ul
+    li(v-for='item in newsListShow')
+        // {{ newsListShow }}
+        div {{ item.title }} <img :src='item.thumbnail_pic_s' class='img'/>
+        div {{ item.author_name }} {{ item.date }}
+
 </template>
 
 <script>
@@ -7,7 +12,7 @@ export default {
     name: '',
     data () {
         return {
-            msg: 'Welcome to Your Vue.js App'
+            newsListShow: []
         }
     },
     created () {
@@ -18,7 +23,7 @@ export default {
             this.$http.post('/news', 'type=top&key=123456')
                 .then(res => {
                     console.log(res.data)
-                    // this.newsListShow = res.data.data;
+                    this.newsListShow = res.data.data
                 })
                 .catch(error => {
                     console.log(error)
@@ -28,6 +33,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='stylus'>
+ul
+    li
+        border-bottom 1px solid gray
+        div
+            img
+                width 80px
+                height 80px
 
 </style>
